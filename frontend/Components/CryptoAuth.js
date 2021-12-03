@@ -62,19 +62,21 @@ const LoginScreen = ({ navigation }) => {
   const passwordInputRef = createRef();
 
   const handleCryptoLogin = () => {
-    authenticate({ connector })
-      .then(() => {
-        if (authError) {
-          setErrortext(authError.message);
-          setVisible(true);
-        } else {
-          if (isAuthenticated) {
-            navigation.replace("DrawerNavigationRoutes");
-          }
-        }
-      })
-      .catch(() => {});
-  };
+    navigation.navigate("Assets");
+   
+    // authenticate({ connector })
+    //   .then(() => {
+    //     if (authError) {
+    //       setErrortext(authError.message);
+    //       setVisible(true);
+    //     } else {
+    //       if (isAuthenticated) {
+    //         navigation.replace("DrawerNavigationRoutes");
+    //       }
+    //     }
+    //   })
+    //   .catch(() => {});
+   };
 
   useEffect(() => {
     isAuthenticated && navigation.replace("DrawerNavigationRoutes");
